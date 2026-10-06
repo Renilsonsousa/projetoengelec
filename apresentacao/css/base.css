@@ -1,0 +1,156 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+body {
+  background: #0A110D;
+  color: var(--ink);
+  font-family: var(--f-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+img { display: block; max-width: 100%; }
+svg.ic { width: 1em; height: 1em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Palco 16:9 ---------- */
+.deck { position: fixed; inset: 0; }
+.stage {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--stage-w); height: var(--stage-h);
+  transform: translate(-50%, -50%) scale(var(--scale, 1));
+  transform-origin: center center;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.slide {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  background: var(--white);
+  opacity: 0; visibility: hidden;
+}
+.slide.is-active { opacity: 1; visibility: visible; z-index: 2; }
+html.motion .slide { transition: opacity .55s ease, visibility 0s linear .55s; }
+html.motion .slide.is-active { transition: opacity .55s ease; }
+html.is-static .ctrl { display: none; }
+.slide.tone-surface { background: var(--surface); }
+.slide.tone-dark { background: var(--g950); color: var(--white); }
+
+.content { position: absolute; left: var(--mx); right: var(--mx); top: 148px; bottom: 96px; }
+
+/* ---------- Moldura do slide (gerada por js/deck.js) ---------- */
+.s-top {
+  position: absolute; left: var(--mx); right: var(--mx); top: 40px; height: 56px;
+  display: flex; align-items: center; justify-content: space-between; z-index: 6;
+}
+.s-logo { display: flex; align-items: center; height: 56px; border-radius: 10px; }
+.s-logo img { height: 52px; width: auto; }
+.tone-dark .s-logo { background: var(--white); padding: 4px 14px; }
+.s-right { display: flex; align-items: center; gap: 22px; }
+.s-case { font-family: var(--f-mono); font-size: 15px; font-weight: 500; color: var(--g700); background: var(--g50); border: 1px solid var(--g200); border-radius: 8px; padding: 6px 12px; white-space: nowrap; }
+
+/* Trilha da jornada (slides 02–14) */
+.s-trail { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; }
+.s-trail span { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #AEB6B2; white-space: nowrap; }
+.s-trail span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.s-trail span + span { margin-left: 30px; position: relative; }
+.s-trail span + span::after { content: ""; position: absolute; left: -22px; top: 50%; width: 14px; height: 1px; background: #D3D9D5; }
+.s-trail .is-past { color: var(--g400); }
+.s-trail .is-now { color: var(--g700); }
+.s-trail .is-now::before { background: var(--g600); box-shadow: 0 0 0 4px var(--g100); }
+.has-plate .s-trail, .has-plate .s-right { background: rgba(255, 255, 255, .94); padding: 8px 14px; border-radius: 10px; }
+.s-num { font-family: var(--f-display); font-size: 17px; font-weight: 500; letter-spacing: .08em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.s-num b { color: var(--ink); font-weight: 600; }
+.tone-dark .s-num { color: var(--g300); }
+.tone-dark .s-num b { color: var(--white); }
+
+.s-foot {
+  position: absolute; left: var(--mx); bottom: 38px; z-index: 6;
+  font-size: 15px; letter-spacing: .04em; color: var(--ink-3);
+}
+.tone-dark .s-foot { color: var(--g300); }
+
+/* ---------- Tipografia ---------- */
+.t-display { font-family: var(--f-display); font-weight: 600; font-size: 128px; line-height: .92; letter-spacing: -.04em; }
+.t-h1 { font-family: var(--f-display); font-weight: 600; font-size: 64px; line-height: 1.04; letter-spacing: -.03em; text-wrap: balance; }
+.t-h2 { font-family: var(--f-display); font-weight: 600; font-size: 40px; line-height: 1.12; letter-spacing: -.022em; text-wrap: balance; }
+.t-lead { font-size: 30px; line-height: 1.4; color: var(--ink-2); text-wrap: pretty; }
+.t-body { font-size: 24px; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+.t-label { font-size: 15px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.mono { font-family: var(--f-mono); font-weight: 500; letter-spacing: -.01em; }
+.accent { color: var(--g600); }
+.tone-dark .t-lead, .tone-dark .t-body { color: rgba(255, 255, 255, .78); }
+
+/* Selo "Simulação conceitual" */
+.sim-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.sim-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; border: 1.5px solid currentColor; }
+.tone-dark .sim-tag { color: var(--g300); }
+
+/* ---------- Controles (fora do palco) ---------- */
+.ctrl {
+  position: fixed; right: 20px; bottom: 20px; z-index: 50;
+  display: flex; align-items: center; gap: 4px;
+  padding: 6px; border-radius: 12px;
+  background: rgba(10, 17, 13, .72);
+  backdrop-filter: blur(6px);
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.ctrl.is-visible, .ctrl:hover, .ctrl:focus-within { opacity: 1; transform: none; }
+.ctrl button {
+  width: 40px; height: 40px; border: 0; border-radius: 8px;
+  background: transparent; color: #fff; cursor: pointer;
+  display: grid; place-items: center; font-size: 20px;
+}
+.ctrl button:hover { background: rgba(255, 255, 255, .12); }
+.ctrl button:focus-visible { outline: 2px solid var(--g300); outline-offset: 1px; }
+.ctrl button:disabled { opacity: .3; cursor: default; background: transparent; }
+.ctrl .ctrl-num { min-width: 64px; text-align: center; color: rgba(255, 255, 255, .85); font: 500 14px/1 var(--f-display); letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+.ctrl .sep { width: 1px; height: 22px; background: rgba(255, 255, 255, .18); margin: 0 4px; }
+
+.progress { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; z-index: 8; background: transparent; }
+.progress i { display: block; height: 100%; width: calc(var(--p, 0) * 100%); background: var(--g600); transition: width .55s var(--ease); }
+
+.rotate-hint {
+  position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 40;
+  display: none; padding: 8px 14px; border-radius: 8px;
+  background: rgba(255, 255, 255, .1); color: rgba(255, 255, 255, .8); font-size: 13px;
+}
+@media (orientation: portrait) and (max-width: 760px) { .rotate-hint { display: block; } }
+
+/* ---------- Animações de entrada ----------
+   Estado-base = estado final visível. As animações só existem com html.motion
+   (desligado em impressão e para quem prefere movimento reduzido). */
+@keyframes a-up    { from { opacity: 0; transform: translateY(24px); } }
+@keyframes a-down  { from { opacity: 0; transform: translateY(-16px); } }
+@keyframes a-fade  { from { opacity: 0; } }
+@keyframes a-right { from { opacity: 0; transform: translateX(-28px); } }
+@keyframes a-left  { from { opacity: 0; transform: translateX(28px); } }
+@keyframes a-rise  { from { opacity: 0; transform: translateY(48px) scale(.98); } }
+@keyframes a-grow  { from { transform: scaleX(0); } }
+@keyframes a-growy { from { transform: scaleY(0); } }
+@keyframes a-pop   { from { opacity: 0; transform: scale(.94); } }
+
+html.motion .slide.is-active [data-a] {
+  animation: var(--anim, a-up) var(--dur, .75s) var(--ease) backwards;
+  animation-delay: var(--d, calc(var(--i, 0) * 120ms + 180ms));
+}
+[data-a="fade"]  { --anim: a-fade; }
+[data-a="down"]  { --anim: a-down; }
+[data-a="right"] { --anim: a-right; }
+[data-a="left"]  { --anim: a-left; }
+[data-a="rise"]  { --anim: a-rise; --dur: 1s; }
+[data-a="grow"]  { --anim: a-grow; --dur: .9s; transform-origin: left center; }
+[data-a="growy"] { --anim: a-growy; --dur: .6s; transform-origin: top center; }
+[data-a="pop"]   { --anim: a-pop; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide, .slide.is-active { transition: none; }
+  html.motion .slide.is-active * { animation: none !important; }
+}

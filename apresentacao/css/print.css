@@ -1,0 +1,16 @@
+/* Impressão / exportação para PDF: um slide 1920×1080 por página, tudo revelado */
+@page { size: 1920px 1080px; margin: 0; }
+
+@media print {
+  html, body { height: auto; overflow: visible; background: #fff; }
+  .deck { position: static; }
+  .stage { position: static; transform: none; width: var(--stage-w); height: auto; overflow: visible; }
+  .slide {
+    position: relative; inset: auto; width: var(--stage-w); height: var(--stage-h);
+    opacity: 1 !important; visibility: visible !important; transition: none !important;
+    break-after: page; page-break-after: always;
+  }
+  .slide:last-of-type { break-after: auto; page-break-after: auto; }
+  .slide *, .slide *::before, .slide *::after { animation: none !important; }
+  .ctrl, .progress, .rotate-hint { display: none !important; }
+}

@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Engelec — Apresentação</title>
+<meta name="description" content="Apresentação comercial do Portal Engelec — ROC7 Soluções Digitais">
+<link rel="preload" href="assets/fonts/SpaceGrotesk-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/IBMPlexSans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/mockups.css">
+<link rel="stylesheet" href="css/slides.css">
+<link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+
+<!-- Ícones (traço único, sem biblioteca externa) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5.5 5h13L21 13v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H9l2 2h7.5A2.5 2.5 0 0 1 21 9.5v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><rect x="4.5" y="3" width="15" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9.5 10.5v3M14.5 10.5v3"/></symbol>
+  <symbol id="i-docs" viewBox="0 0 24 24"><path d="M8 7V5a2 2 0 0 1 2-2h5l4 4v10a2 2 0 0 1-2 2h-2"/><path d="M5 7h6l4 4v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M20.5 11.5l-8.2 8.2a5 5 0 0 1-7.1-7.1l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8l-8.4 8.4a1.7 1.7 0 0 1-2.4-2.4l7.7-7.7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM14 18.5v2M18.5 14h2"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6"/><path d="M3.5 4.5V9H8"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M6 5v7a3 3 0 0 0 3 3h10"/><path d="M15 11l4 4-4 4"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L13 18a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5L17 4l3 3-2.5 2.5"/><path d="M4 20l5-5"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8 8.5"/></symbol>
+  <symbol id="i-spec" viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h9"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="2.6"/></symbol>
+  <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M5 3l14.5 8-6.3 1.6L10 19z" fill="#fff" stroke="#16201B" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- Modelos compartilhados dos mockups (preenchidos por js/deck.js) -->
+<template id="tpl-winbar">
+  <div class="win-bar"><span class="win-dots"><i></i><i></i><i></i></span><span class="win-url"><svg class="ic"><use href="#i-lock"/></svg><span data-url>Portal Engelec</span></span></div>
+</template>
+<template id="tpl-side">
+  <aside class="app-side">
+    <img class="app-logo" src="assets/marca/logo-engelec.png" alt="Engelec">
+    <nav class="app-nav">
+      <a data-k="dashboard"><svg class="ic"><use href="#i-grid"/></svg>Dashboard</a>
+      <a data-k="solicitacoes"><svg class="ic"><use href="#i-inbox"/></svg>Solicitações</a>
+      <a data-k="orcamentos"><svg class="ic"><use href="#i-file"/></svg>Orçamentos</a>
+      <a data-k="projetos"><svg class="ic"><use href="#i-folder"/></svg>Projetos</a>
+      <a data-k="equipamentos"><svg class="ic"><use href="#i-panel"/></svg>Equipamentos</a>
+      <a data-k="documentos"><svg class="ic"><use href="#i-docs"/></svg>Documentos</a>
+    </nav>
+    <div class="app-side-foot"><span class="av" data-av></span><span data-role></span></div>
+  </aside>
+</template>
+<template id="tpl-top">
+  <header class="app-top">
+    <div class="app-crumb" data-crumb></div>
+    <div class="app-search"><svg class="ic"><use href="#i-search"/></svg>Buscar solicitações, projetos, TAGs</div>
+  </header>
+</template>
+
+<div class="deck" id="deck">
+<main class="stage" id="stage">
+
+<!-- ============ 01 — CAPA ============ -->
+<section class="slide tone-dark s01" data-foot="Desenvolvido por ROC7 Soluções Digitais" aria-label="Portal Engelec">
+  <div class="s01-photo" data-a="fade" style="--i:0;--dur:1.6s">
+    <img src="assets/img/painel-engelec-capa.jpg" alt="Painéis Engelec">
+  </div>
+  <div class="s01-grid" aria-hidden="true"></div>
+
+  <div class="s01-copy">
+    <h1 class="t-display" data-a style="--i:1">PORTAL<br><span>ENGELEC</span></h1>
+    <p class="s01-sub" data-a style="--i:2">Gestão comercial, projetos e documentação técnica em um único ambiente.</p>
+    <p class="s01-sub2" data-a style="--i:3">Da solicitação do cliente à documentação entregue junto ao painel.</p>
+  </div>
+
+  <div class="s01-mock" data-a="rise" style="--i:4">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="projetos" data-av="EN" data-role="Engenharia"></div>
+        <div class="app-main">
+          <div data-top="Projetos|ENG-2026-0047"></div>
+          <div class="app-body">
+            <div class="page-head">
+              <div>
+                <div class="page-title"><span class="mono">ENG-2026-0047</span><span class="badge b-producao">Em produção</span></div>
+                <div class="page-sub">Cliente Exemplo Indústria Ltda · origem <span class="mono">ORC-2026-0041</span> · Rev.01</div>
+              </div>
+              <span class="btn"><svg class="ic"><use href="#i-docs"/></svg>Documentação</span>
+            </div>
+            <div class="card card-pad">
+              <div class="steps">
+                <div class="step is-done"><i></i>Solicitação</div>
+                <div class="step is-done"><i></i>Orçamento</div>
+                <div class="step is-done"><i></i>Aprovação</div>
+                <div class="step is-done"><i></i>Projeto</div>
+                <div class="step is-now"><i></i>Produção</div>
+                <div class="step"><i></i>Documentação</div>
+              </div>
+            </div>
+            <div class="card tbl-wrap">
+              <div class="tbl-head"><h5>Equipamentos</h5><span class="badge b-neutro">3 equipamentos</span></div>
+              <table class="tbl">
+                <thead><tr><th>TAG</th><th>Descrição</th><th>Qtd.</th><th>Status</th><th>QR</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">QGBT-01</td><td>Quadro geral de baixa tensão</td><td class="muted">1</td><td><span class="badge b-producao">Em produção</span></td><td><span class="badge b-qr">2 disponíveis no QR</span></td></tr>
+                  <tr><td class="mono">QDC-01</td><td>Quadro de distribuição</td><td class="muted">2</td><td><span class="badge b-producao">Em produção</span></td><td><span class="badge b-qr">2 disponíveis no QR</span></td></tr>
+                  <tr><td class="mono">CCM-01</td><td>Centro de controle de motores</td><td class="muted">1</td><td><span class="badge b-aprovado">Projeto</span></td><td><span class="badge b-interno">Não publicado</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="sim-tag s01-sim" data-a="fade" style="--i:6">Simulação conceitual</span>
+</section>
+
+<!-- ============ 02 — FORMULÁRIO DO SITE ============ -->
+<section class="slide s02" data-stage="0" aria-label="Tudo começa no formulário do site">
+  <div class="copy-l s02-copy">
+    <h2 class="t-h1 sm" data-a style="--i:0">Tudo começa no formulário do site.</h2>
+    <p class="t-body" data-a style="--i:1">O cliente acessa o site da Engelec e solicita um orçamento, informando os dados necessários para que a equipe entenda sua necessidade.</p>
+    <p class="t-body" data-a style="--i:2">Se tiver um projeto, diagrama ou outro arquivo, pode anexá-lo junto com a solicitação.</p>
+    <ol class="vsteps" data-a style="--i:3">
+      <li>Cliente</li>
+      <li>Formulário do site</li>
+      <li>Enviar solicitação</li>
+      <li>Portal Engelec</li>
+    </ol>
+    <p class="note" data-a style="--d:3000ms">A partir do envio, a solicitação passa a fazer parte do fluxo do Portal.</p>
+  </div>
+
+  <div class="s02-win" data-a="left" style="--i:2">
+    <div class="ui win" data-win data-url="Site Engelec · Solicitar orçamento">
+      <div class="site">
+        <div class="site-head"><img src="assets/marca/logo-engelec.png" alt="Engelec"><span class="btn btn-sm btn-primary">Solicitar orçamento</span></div>
+        <div class="site-body">
+          <div class="site-intro">
+            <h3>Solicite um orçamento</h3>
+            <p>Conte o que você precisa. Se tiver projeto ou diagrama, envie junto.</p>
+          </div>
+          <div class="card site-form">
+            <div class="grid-2">
+              <div class="field"><label>Nome</label><div class="input">Carlos Exemplo</div></div>
+              <div class="field"><label>Empresa</label><div class="input">Cliente Exemplo Indústria Ltda</div></div>
+              <div class="field"><label>E-mail</label><div class="input">carlos@clienteexemplo.com.br</div></div>
+              <div class="field"><label>WhatsApp</label><div class="input">(71) 9 0000-0000</div></div>
+            </div>
+            <div class="field"><label>Solução procurada</label><div class="input select">Quadro geral de baixa tensão (QGBT)<svg class="ic"><use href="#i-chev-r"/></svg></div></div>
+            <div class="field"><label>Descrição do que precisa</label><div class="input area">Ampliação do quadro geral da unidade fabril. Envio o diagrama unifilar em anexo.</div></div>
+            <div class="field"><label>Arquivo (opcional)</label>
+              <div class="drop"><span class="file-ic"><svg class="ic"><use href="#i-clip"/></svg></span><div class="file-name">diagrama-unifilar.pdf</div><span class="file-meta">2,4 MB</span></div>
+            </div>
+            <div class="row" style="justify-content:flex-end">
+              <span class="btn btn-primary hl" style="--hd:1500ms;--cd:2100ms;height:44px;padding:0 22px;font-size:15px"><span class="pin">1</span>Enviar solicitação<span class="cursor"><svg><use href="#i-cursor"/></svg></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s02-toast" data-a="rise" style="--d:3000ms">
+    <span class="toast"><span class="ok"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Solicitação enviada</b><small>Recebida no Portal Engelec como <span class="mono">SOL-2026-0087</span></small></span></span>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 03 — A SOLICITAÇÃO APARECE NO PORTAL ============ -->
+<section class="slide s03" data-stage="1" data-case="SOL-2026-0087" aria-label="A solicitação aparece no Portal">
+  <div class="copy-l s03-copy">
+    <h2 class="t-h1 sm" data-a style="--i:0">A solicitação aparece no Portal.</h2>
+    <p class="t-body" data-a style="--i:1">Assim que o cliente envia o formulário do site, uma nova solicitação aparece automaticamente no Portal Engelec.</p>
+    <p class="t-body" data-a style="--i:2">No Dashboard, o comercial identifica a nova solicitação. Ao abri-la, encontra em uma única tela tudo o que o cliente preencheu.</p>
+    <p class="note" data-a style="--d:2600ms">O comercial já começa o atendimento com as informações que o próprio cliente enviou.</p>
+  </div>
+
+  <div class="s03-dash" data-a="left" style="--i:1">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="dashboard" data-av="CO" data-role="Comercial" data-count="1"></div>
+        <div class="app-main">
+          <div data-top="Dashboard"></div>
+          <div class="app-body">
+            <div class="page-head"><div class="page-title">Dashboard</div></div>
+            <div class="kpis">
+              <div class="card kpi"><div class="k-label">Solicitações novas</div><div class="k-val">1<small>+1 hoje</small></div></div>
+              <div class="card kpi"><div class="k-label">Em análise</div><div class="k-val">2</div></div>
+              <div class="card kpi"><div class="k-label">Orçamentos em revisão</div><div class="k-val">3</div></div>
+              <div class="card kpi"><div class="k-label">Projetos em produção</div><div class="k-val">5</div></div>
+            </div>
+            <div class="card tbl-wrap">
+              <div class="tbl-head"><h5>Solicitações recentes</h5></div>
+              <table class="tbl">
+                <thead><tr><th>Código</th><th>Empresa</th><th>Solução</th><th>Recebida</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr class="hl-row" style="--hd:1300ms"><td class="mono">SOL-2026-0087</td><td>Cliente Exemplo Indústria Ltda</td><td class="muted">QGBT</td><td class="muted">22/09, 09:42</td><td><span class="badge b-nova">Nova</span><span class="call up">Nova solicitação</span></td></tr>
+                  <tr><td class="mono">SOL-2026-0086</td><td>Condomínio Exemplo</td><td class="muted">Quadro de distribuição</td><td class="muted">21/09</td><td><span class="badge b-analise">Em análise</span></td></tr>
+                  <tr><td class="mono">SOL-2026-0085</td><td>Supermercado Exemplo</td><td class="muted">Banco de capacitores</td><td class="muted">19/09</td><td><span class="badge b-aprovado">Orçamento</span></td></tr>
+                  <tr><td class="mono">SOL-2026-0084</td><td>Hospital Exemplo</td><td class="muted">CCM</td><td class="muted">18/09</td><td><span class="badge b-analise">Em análise</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s03-panel" data-a="rise" style="--d:2100ms">
+    <div class="ui panel">
+      <div class="panel-head">
+        <div class="row"><span class="mono" style="font-size:14px;color:var(--ink-2)">SOL-2026-0087</span><span class="badge b-nova">Nova</span><span style="margin-left:auto;font-size:13px;color:var(--ink-3)">22/09/2026, 09:42 · pelo site</span></div>
+        <div class="page-title" style="font-size:22px;margin-top:10px">Cliente Exemplo Indústria Ltda</div>
+      </div>
+      <div class="panel-body">
+        <div class="grid-2">
+          <div class="field"><label>Nome</label><div class="val">Carlos Exemplo</div></div>
+          <div class="field"><label>Solução solicitada</label><div class="val">QGBT</div></div>
+          <div class="field"><label>E-mail</label><div class="val">carlos@clienteexemplo.com.br</div></div>
+          <div class="field"><label>WhatsApp</label><div class="val">(71) 9 0000-0000</div></div>
+        </div>
+        <div class="field"><label>Descrição da necessidade</label><div class="input">Ampliação do quadro geral da unidade fabril. Envio o diagrama unifilar em anexo.</div></div>
+        <div class="field"><label>Arquivo enviado</label>
+          <div class="file"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">diagrama-unifilar.pdf</div><div class="file-meta">2,4 MB</div></div><svg class="ic ext" style="font-size:16px"><use href="#i-clip"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 04 — O COMERCIAL ANALISA ============ -->
+<section class="slide tone-surface s04" data-stage="1" data-case="SOL-2026-0087" aria-label="O comercial analisa a solicitação">
+  <div class="s04-win" data-a="right" style="--i:1">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="solicitacoes" data-av="CO" data-role="Comercial"></div>
+        <div class="app-main">
+          <div data-top="Solicitações|SOL-2026-0087"></div>
+          <div class="app-body">
+            <div class="page-head">
+              <div>
+                <div class="page-title"><span class="mono">SOL-2026-0087</span><span class="badge b-analise">Em análise</span></div>
+                <div class="page-sub">Detalhes da solicitação · recebida pelo site em 22/09/2026, 09:42</div>
+              </div>
+              <span class="btn btn-primary hl" style="--hd:2300ms;--cd:2900ms;height:42px;padding:0 20px;font-size:15px"><span class="pin">4</span><svg class="ic"><use href="#i-file"/></svg>Criar orçamento<span class="cursor"><svg><use href="#i-cursor"/></svg></span></span>
+            </div>
+            <div class="s04-grid">
+              <div class="card card-pad hl" style="--hd:1200ms"><span class="pin">1</span>
+                <div class="card-title" style="margin-bottom:16px">Cliente</div>
+                <div class="s04-fields">
+                  <div class="field"><label>Nome</label><div class="val">Carlos Exemplo</div></div>
+                  <div class="field"><label>Empresa</label><div class="val">Cliente Exemplo Indústria Ltda</div></div>
+                  <div class="field"><label>E-mail</label><div class="val">carlos@clienteexemplo.com.br</div></div>
+                  <div class="field"><label>WhatsApp</label><div class="val">(71) 9 0000-0000</div></div>
+                </div>
+              </div>
+              <div class="s04-right">
+                <div class="card card-pad hl" style="--hd:1600ms"><span class="pin">2</span>
+                  <div class="card-title" style="margin-bottom:14px">Solicitação</div>
+                  <div class="field"><label>Solução procurada</label><div class="val">Quadro geral de baixa tensão (QGBT)</div></div>
+                  <div class="field" style="margin-top:14px"><label>Descrição</label><div class="val" style="color:var(--ink-2)">Ampliação do quadro geral da unidade fabril. Envio o diagrama unifilar em anexo.</div></div>
+                </div>
+                <div class="card card-pad hl" style="--hd:1950ms"><span class="pin">3</span>
+                  <div class="card-title" style="margin-bottom:12px">Arquivo enviado</div>
+                  <div class="row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">diagrama-unifilar.pdf</div><div class="file-meta">2,4 MB</div></div><span class="btn btn-sm" style="margin-left:auto"><svg class="ic"><use href="#i-eye"/></svg>Visualizar</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ol class="chain s04-chain">
+    <li data-a style="--d:3300ms">Solicitação</li>
+    <li class="is-key" data-a style="--d:3550ms">Criar orçamento</li>
+    <li data-a style="--d:3800ms">Novo orçamento</li>
+  </ol>
+
+  <div class="copy-r s04-copy">
+    <h2 class="t-h1 sm" data-a style="--i:0">O comercial analisa a solicitação.</h2>
+    <p class="t-body" data-a style="--i:1">Ao abrir a solicitação, o comercial confere as informações enviadas e entende o que o cliente precisa. O arquivo enviado pode ser consultado na mesma tela.</p>
+    <ol class="legend" data-a style="--i:2">
+      <li><b>1</b>Informações do cliente</li>
+      <li><b>2</b>Descrição da necessidade</li>
+      <li><b>3</b>Arquivo enviado</li>
+      <li><b>4</b>Criar orçamento</li>
+    </ol>
+    <p class="t-body" data-a style="--i:3">Depois da análise, basta clicar em <strong style="color:var(--ink)">Criar orçamento</strong>: o Portal leva para a próxima etapa as principais informações já preenchidas.</p>
+    <p class="note" data-a style="--d:3000ms">Não é necessário começar novamente digitando os mesmos dados.</p>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 05 — O ORÇAMENTO NÃO COMEÇA DO ZERO ============ -->
+<section class="slide s05" data-stage="2" data-case="ORC-2026-0041" aria-label="O orçamento não começa do zero">
+  <div class="copy-l s05-copy">
+    <h2 class="t-h1 sm" data-a style="--i:0">O orçamento não começa do zero.</h2>
+    <p class="t-body" data-a style="--i:1">Ao criar o orçamento, as principais informações que já constavam na solicitação aparecem preenchidas.</p>
+    <ol class="chain" data-a style="--i:2">
+      <li><span class="mono" style="letter-spacing:0">SOL-2026-0087</span></li>
+      <li class="is-key">Novo orçamento</li>
+    </ol>
+    <p class="t-body" data-a style="--i:3">A partir daí, são acrescentadas as informações comerciais: equipamentos, quantidades, valores, condições comerciais, prazo e demais informações definidas pela Engelec.</p>
+    <p class="note" data-a style="--d:2900ms">As informações que já chegaram pelo site não precisam ser digitadas novamente.</p>
+  </div>
+
+  <div class="s05-win" data-a="left" style="--i:1">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="orcamentos" data-av="CO" data-role="Comercial"></div>
+        <div class="app-main">
+          <div data-top="Orçamentos|Novo orçamento"></div>
+          <div class="app-body">
+            <div class="page-head">
+              <div>
+                <div class="page-title">Novo orçamento <span class="mono" style="font-size:20px;color:var(--ink-2)">ORC-2026-0041</span><span class="badge b-neutro">Rascunho</span></div>
+                <div class="page-sub">Criado a partir da solicitação <span class="mono">SOL-2026-0087</span></div>
+              </div>
+            </div>
+            <div class="card card-pad hl" style="--hd:1300ms"><span class="call up" style="right:16px">Preenchido a partir da solicitação</span>
+              <div class="card-title" style="margin-bottom:14px">Cliente e projeto</div>
+              <div class="grid-2">
+                <div class="field"><label>Empresa <span class="from"><svg class="ic"><use href="#i-link"/></svg>da solicitação</span></label><div class="input pre">Cliente Exemplo Indústria Ltda</div></div>
+                <div class="field"><label>Contato <span class="from"><svg class="ic"><use href="#i-link"/></svg>da solicitação</span></label><div class="input pre">Carlos Exemplo</div></div>
+                <div class="field"><label>E-mail <span class="from"><svg class="ic"><use href="#i-link"/></svg>da solicitação</span></label><div class="input pre">carlos@clienteexemplo.com.br</div></div>
+                <div class="field"><label>WhatsApp <span class="from"><svg class="ic"><use href="#i-link"/></svg>da solicitação</span></label><div class="input pre">(71) 9 0000-0000</div></div>
+              </div>
+              <div class="field" style="margin-top:14px"><label>Projeto / referência <span class="from"><svg class="ic"><use href="#i-link"/></svg>da solicitação</span></label><div class="input pre">Ampliação do quadro geral da unidade fabril</div></div>
+            </div>
+            <div class="card card-pad">
+              <div class="row" style="justify-content:space-between">
+                <div class="card-title">Equipamentos</div>
+                <span class="btn btn-primary hl" style="--hd:2200ms;--cd:2700ms"><svg class="ic"><use href="#i-plus"/></svg>Adicionar equipamento<span class="cursor"><svg><use href="#i-cursor"/></svg></span></span>
+              </div>
+              <div style="margin-top:12px;padding:14px;border:1.5px dashed var(--line);border-radius:10px;font-size:14px;color:var(--ink-3);text-align:center">Nenhum equipamento adicionado</div>
+            </div>
+            <div class="grid-2">
+              <div class="field"><label>Condições comerciais</label><div class="input empty">A preencher</div></div>
+              <div class="field"><label>Prazo</label><div class="input empty">A preencher</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 06 — EQUIPAMENTOS E LISTAS DE MATERIAIS ============ -->
+<section class="slide tone-surface s06" data-stage="2" data-case="ORC-2026-0041" aria-label="Equipamentos e listas de materiais">
+  <div class="s06-head">
+    <h2 class="t-h1 sm" data-a style="--i:0">Cada equipamento pode ser detalhado dentro da proposta.</h2>
+    <p class="t-body" data-a style="--i:1">Uma mesma proposta pode incluir mais de um quadro ou painel elétrico. Para cada equipamento, também pode ser cadastrada sua própria lista de materiais.</p>
+  </div>
+
+  <div class="s06-win" data-a="right" style="--i:2">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="orcamentos" data-av="EN" data-role="Engenharia"></div>
+        <div class="app-main">
+          <div data-top="Orçamentos|ORC-2026-0041"></div>
+          <div class="app-body">
+            <div class="page-head"><div class="page-title"><span class="mono">ORC-2026-0041</span><span class="badge b-neutro">Rascunho</span></div></div>
+            <div class="tabs"><span class="is-on">Equipamentos</span><span>Condições comerciais</span><span>Revisões</span></div>
+            <div class="card tbl-wrap">
+              <table class="tbl">
+                <thead><tr><th>TAG</th><th>Descrição</th><th class="num">Qtd.</th><th>Lista de materiais</th></tr></thead>
+                <tbody>
+                  <tr class="hl-row" style="--hd:1400ms"><td class="mono">QGBT-01</td><td>Quadro geral de baixa tensão</td><td class="num">1</td><td class="muted">5 itens</td></tr>
+                  <tr><td class="mono">QDC-01</td><td>Quadro de distribuição</td><td class="num"><b>2</b></td><td class="muted">4 itens</td></tr>
+                  <tr><td class="mono">CCM-01</td><td>Centro de controle de motores</td><td class="num">1</td><td class="muted">6 itens</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="link-arrow s06-arrow" style="--d:1800ms"></span>
+
+  <div class="s06-panel" data-a="left" style="--d:1900ms">
+    <div class="ui panel">
+      <div class="panel-head">
+        <div class="row"><span class="mono" style="font-size:24px">QGBT-01</span><span class="badge b-neutro">Qtd. 1</span></div>
+        <div class="page-sub">Quadro geral de baixa tensão</div>
+      </div>
+      <div class="panel-body" style="gap:14px">
+        <div class="tabs"><span>Informações</span><span class="is-on">Lista de materiais</span></div>
+        <table class="tbl tbl-tight">
+          <thead><tr><th>Item</th><th class="num">Qtd.</th><th>Un.</th><th>Descrição</th><th>Referência</th><th>Fabricante</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td class="num">1</td><td>un</td><td>Disjuntor geral tripolar</td><td class="mono">DJ-3P-800</td><td class="muted">Conforme projeto</td></tr>
+            <tr><td>2</td><td class="num">6</td><td>un</td><td>Disjuntor tripolar de saída</td><td class="mono">DJ-3P-125</td><td class="muted">Conforme projeto</td></tr>
+            <tr><td>3</td><td class="num">3</td><td>un</td><td>Dispositivo de proteção contra surtos</td><td class="mono">DPS-40-C2</td><td class="muted">Conforme projeto</td></tr>
+            <tr><td>4</td><td class="num">1</td><td>un</td><td>Multimedidor de grandezas</td><td class="mono">MM-01</td><td class="muted">Conforme projeto</td></tr>
+            <tr><td>5</td><td class="num">18</td><td>kg</td><td>Barramento de cobre</td><td class="mono">BAR-CU</td><td class="muted">Engelec</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <p class="note s06-note" data-a style="--d:2700ms">A Engelec define internamente quem preenche cada lista. O importante é que as informações ficam associadas ao equipamento correto.</p>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 07 — PROPOSTA PRONTA PARA ENVIO ============ -->
+<section class="slide s07" data-stage="3" data-case="ORC-2026-0041" aria-label="Proposta profissional">
+  <div class="copy-l s07-copy">
+    <h2 class="t-h1 sm" data-a style="--i:0">Das informações cadastradas para uma proposta profissional.</h2>
+    <p class="t-body" data-a style="--i:1">O Portal monta a proposta comercial no padrão visual da Engelec, reunindo:</p>
+    <ul class="pills" data-a style="--i:2">
+      <li>Dados do cliente</li><li>Identificação do projeto</li><li>Equipamentos</li><li>Valores</li><li>Listas de materiais</li><li>Condições comerciais</li><li>Condições gerais de fornecimento aprovadas pela Engelec</li>
+    </ul>
+    <p class="t-body" data-a style="--i:3">Depois da conferência, o comercial poderá enviar a proposta pelo próprio Portal. O sistema registra qual revisão foi enviada, quando o envio aconteceu e para qual cliente.</p>
+    <ol class="chain" data-a style="--i:4">
+      <li><b>1</b>Visualizar</li><li><b>2</b>Gerar PDF</li><li class="is-key"><b>3</b>Enviar proposta</li>
+    </ol>
+    <p class="s07-mail" data-a style="--d:3600ms"><svg class="ic"><use href="#i-mail"/></svg>O cliente recebe a proposta normalmente em seu e-mail.</p>
+  </div>
+
+  <div class="s07-win" data-a="left" style="--i:1">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="orcamentos" data-av="CO" data-role="Comercial"></div>
+        <div class="app-main">
+          <div data-top="Orçamentos|ORC-2026-0041"></div>
+          <div class="app-body">
+            <div class="page-head">
+              <div>
+                <div class="page-title"><span class="mono">ORC-2026-0041</span><span class="badge b-neutro">Revisão 01</span><span class="badge b-nova">Pronta para envio</span></div>
+                <div class="page-sub">Cliente Exemplo Indústria Ltda</div>
+              </div>
+            </div>
+            <div class="row" style="gap:14px">
+              <span class="btn hl" style="--hd:1300ms"><span class="pin">1</span><svg class="ic"><use href="#i-eye"/></svg>Visualizar</span>
+              <span class="btn hl" style="--hd:1800ms"><span class="pin">2</span><svg class="ic"><use href="#i-down"/></svg>Gerar PDF</span>
+              <span class="btn btn-primary hl" style="--hd:2300ms;--cd:2700ms"><span class="pin">3</span><svg class="ic"><use href="#i-mail"/></svg>Enviar proposta<span class="cursor"><svg><use href="#i-cursor"/></svg></span></span>
+            </div>
+            <div class="card card-pad send-log" data-a="fade" style="--d:3200ms">
+              <div class="card-title" style="margin-bottom:10px">Registro de envio</div>
+              <div class="send-row"><span>Revisão enviada</span><b class="mono">Rev.01</b></div>
+              <div class="send-row"><span>Data do envio</span><b>29/09/2026, 16:20</b></div>
+              <div class="send-row"><span>Destinatário</span><b>Carlos Exemplo · carlos@clienteexemplo.com.br</b></div>
+              <div class="send-prev"><svg class="ic"><use href="#i-history"/></svg>Rev.00 enviada em 25/09/2026 · mantida no histórico</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s07-sheet" data-a="rise" style="--d:1500ms">
+    <div class="sheet sheet-pro">
+      <div class="sheet-band"></div>
+      <div class="row" style="justify-content:space-between;align-items:flex-start">
+        <img class="sheet-logo" src="assets/marca/logo-engelec.png" alt="Engelec">
+        <div style="text-align:right"><div class="sheet-kicker">Proposta comercial</div><div class="mono" style="font-size:12px;margin-top:4px">ORC-2026-0041 · Rev.01</div></div>
+      </div>
+      <div class="sheet-grid">
+        <div><span>Cliente</span>Cliente Exemplo Indústria Ltda</div>
+        <div><span>Contato</span>Carlos Exemplo</div>
+        <div><span>Projeto</span>Ampliação do quadro geral</div>
+        <div><span>Data</span>29/09/2026</div>
+      </div>
+      <div>
+        <h6>Equipamentos</h6>
+        <table>
+          <thead><tr><th>TAG</th><th>Descrição</th><th class="num">Qtd.</th><th class="num">Total</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">QGBT-01</td><td>Quadro geral de baixa tensão</td><td class="num">1</td><td class="num">47.400,00</td></tr>
+            <tr><td class="mono">QDC-01</td><td>Quadro de distribuição</td><td class="num">2</td><td class="num">24.000,00</td></tr>
+            <tr><td class="mono">CCM-01</td><td>Centro de controle de motores</td><td class="num">1</td><td class="num">36.000,00</td></tr>
+          </tbody>
+        </table>
+        <div class="sheet-total"><span>Total</span><b>R$ 107.400,00</b></div>
+      </div>
+      <div><h6>Listas de materiais</h6><div class="sk" style="width:94%"></div><div class="sk" style="width:80%"></div></div>
+      <div><h6>Condições comerciais</h6><div class="sk" style="width:88%"></div><div class="sk" style="width:72%"></div></div>
+      <div><h6>Condições gerais de fornecimento</h6><div class="sk" style="width:96%"></div><div class="sk" style="width:84%"></div></div>
+      <div class="sheet-foot"></div>
+    </div>
+  </div>
+
+  <div class="s07-toast" data-a="rise" style="--d:3400ms">
+    <span class="toast"><span class="ok"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Proposta Rev.01 enviada</b><small>Registrada no histórico do Portal</small></span></span>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 08 — E QUANDO O CLIENTE RESPONDE? ============ -->
+<section class="slide tone-surface s08" data-stage="3" data-case="ORC-2026-0041" aria-label="E quando o cliente responde à proposta?">
+  <div class="copy-l s08-copy">
+    <h2 class="s08-q" data-a style="--i:0">E quando o cliente responde à proposta?</h2>
+    <p class="t-body" data-a style="--i:1">O cliente continua respondendo normalmente pelo e-mail. Depois de analisar o retorno, o comercial informa no Portal qual foi o resultado da negociação.</p>
+    <p class="note" data-a style="--d:3200ms">O Portal não interpreta os e-mails automaticamente: quem registra o resultado é o comercial.</p>
+  </div>
+
+  <div class="reply">
+    <ol class="reply-steps">
+      <li data-a style="--d:500ms"><svg class="ic"><use href="#i-mail"/></svg>Proposta enviada pelo Portal</li>
+      <li data-a style="--d:750ms"><svg class="ic"><use href="#i-inbox"/></svg>Cliente recebe por e-mail</li>
+      <li data-a style="--d:1000ms"><svg class="ic"><use href="#i-msg"/></svg>Cliente responde</li>
+      <li data-a style="--d:1250ms"><svg class="ic"><use href="#i-mail"/></svg>Resposta chega ao e-mail da Engelec</li>
+      <li class="is-key" data-a style="--d:1500ms"><svg class="ic"><use href="#i-user"/></svg>Comercial analisa o retorno</li>
+    </ol>
+    <svg class="reply-branch" viewBox="0 0 948 40" preserveAspectRatio="none" aria-hidden="true">
+      <path class="ln" style="--ld:1800ms" d="M474 0 V20 M151 20 H797 M151 20 V40 M474 20 V40 M797 20 V40" pathLength="1"/>
+    </svg>
+    <div class="outs">
+      <div class="out" data-a style="--d:2100ms">
+        <span class="badge b-revisao">Solicitou alteração</span>
+        <ul><li>Cria uma nova revisão</li><li>A versão anterior permanece registrada no histórico</li></ul>
+        <span class="out-ex mono">Rev.00 → Rev.01</span>
+      </div>
+      <div class="out out-ok" data-a style="--d:2350ms">
+        <span class="badge b-aprovado">Aprovou</span>
+        <ul><li>O orçamento é marcado como aprovado</li><li>Poderá ser convertido em projeto</li></ul>
+        <span class="out-ex mono">Rev.01 aprovada</span>
+      </div>
+      <div class="out" data-a style="--d:2600ms">
+        <span class="badge b-neutro">Não prosseguiu</span>
+        <ul><li>O orçamento é encerrado sem gerar projeto</li></ul>
+      </div>
+    </div>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 09 — ORÇAMENTO APROVADO: NASCE O PROJETO ============ -->
+<section class="slide s09" data-stage="4" data-case="ENG-2026-0047" aria-label="Orçamento aprovado: agora nasce o projeto">
+  <div class="content">
+    <h2 class="t-h1 s09-title" data-a style="--i:0">Orçamento aprovado: <span class="accent">agora nasce o projeto.</span></h2>
+
+    <div class="tree tree2">
+      <svg class="tree-lines" viewBox="0 0 1696 380" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ln" style="--ld:600ms" d="M400 190 H470" pathLength="1"/>
+        <path class="ln" style="--ld:1500ms" d="M770 190 H840" pathLength="1"/>
+        <path class="ln" style="--ld:2300ms" d="M1260 190 H1280 C1306 190 1306 62 1330 62 H1340" pathLength="1"/>
+        <path class="ln" style="--ld:2300ms" d="M1260 190 H1340" pathLength="1"/>
+        <path class="ln" style="--ld:2300ms" d="M1260 190 H1280 C1306 190 1306 318 1330 318 H1340" pathLength="1"/>
+      </svg>
+
+      <div class="t-orc" data-a="right" style="--i:1">
+        <span class="t-check"><svg class="ic"><use href="#i-check"/></svg></span>
+        <div>
+          <div class="mono t-orc-code">ORC-2026-0041</div>
+          <div class="row" style="gap:10px;margin-top:8px"><span class="mono t-orc-id" style="margin:0">Rev.01</span><span class="badge b-aprovado">Aprovado</span></div>
+        </div>
+      </div>
+
+      <div class="t-btn" data-a="pop" style="--d:1000ms">
+        <span class="btn btn-primary hl" style="--hd:1100ms;--cd:1250ms"><svg class="ic"><use href="#i-folder"/></svg>Converter em projeto<span class="cursor"><svg><use href="#i-cursor"/></svg></span></span>
+      </div>
+
+      <div class="t-proj" data-a="pop" style="--d:1800ms">
+        <div class="t-label">Projeto</div>
+        <div class="mono t-proj-id">ENG-2026-0047</div>
+      </div>
+
+      <div class="t-eqs">
+        <div class="t-eq" data-a="left" style="--d:2500ms"><svg class="ic"><use href="#i-panel"/></svg><span class="mono">QGBT-01</span><small>Qtd. 1</small></div>
+        <div class="t-eq" data-a="left" style="--d:2620ms"><svg class="ic"><use href="#i-panel"/></svg><span class="mono">QDC-01</span><small>Qtd. 2</small></div>
+        <div class="t-eq" data-a="left" style="--d:2740ms"><svg class="ic"><use href="#i-panel"/></svg><span class="mono">CCM-01</span><small>Qtd. 1</small></div>
+      </div>
+    </div>
+
+    <div class="s09-foot">
+      <p class="t-body" data-a style="--d:3000ms">Quando o comercial confirma a aprovação, o orçamento pode ser convertido em projeto. As informações que já foram cadastradas seguem para a próxima etapa, evitando começar novamente do zero.</p>
+      <p class="s09-hl" data-a style="--d:3200ms">Equipamentos, informações técnicas e listas de materiais permanecem associados ao projeto.<span>E ficam disponíveis aos usuários autorizados.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 — CADA EQUIPAMENTO TEM SEU ESPAÇO ============ -->
+<section class="slide tone-surface s10" data-stage="5" data-case="ENG-2026-0047" aria-label="Cada equipamento tem seu próprio espaço">
+  <div class="s10-head">
+    <h2 class="t-h1 sm" data-a style="--i:0">Cada equipamento passa a ter seu próprio espaço.</h2>
+  </div>
+
+  <div class="s10-win" data-a="right" style="--i:1">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="projetos" data-av="TE" data-role="Técnico"></div>
+        <div class="app-main">
+          <div data-top="Projetos|ENG-2026-0047"></div>
+          <div class="app-body">
+            <div class="page-head">
+              <div>
+                <div class="page-title"><span class="mono">ENG-2026-0047</span><span class="badge b-producao">Em produção</span></div>
+                <div class="page-sub">Cliente Exemplo Indústria Ltda · 3 equipamentos</div>
+              </div>
+            </div>
+            <div class="card tbl-wrap">
+              <table class="tbl">
+                <thead><tr><th>TAG</th><th>Descrição</th><th class="num">Qtd.</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr class="hl-row" style="--hd:1300ms"><td class="mono">QGBT-01</td><td>Quadro geral de baixa tensão</td><td class="num">1</td><td><span class="badge b-producao">Em produção</span></td></tr>
+                  <tr><td class="mono">QDC-01</td><td>Quadro de distribuição</td><td class="num">2</td><td><span class="badge b-producao">Em produção</span></td></tr>
+                  <tr><td class="mono">CCM-01</td><td>Centro de controle de motores</td><td class="num">1</td><td><span class="badge b-aprovado">Projeto</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="link-arrow s10-arrow" style="--d:1700ms"></span>
+
+  <div class="s10-card" data-a="pop" style="--d:1800ms">
+    <div class="ui panel ficha">
+      <div class="panel-head">
+        <div class="row"><span class="mono" style="font-size:30px;letter-spacing:-.02em">QGBT-01</span><span class="badge b-producao">Em produção</span></div>
+        <div class="page-sub">Quadro geral de baixa tensão · Projeto <span class="mono">ENG-2026-0047</span> · Qtd. 1</div>
+      </div>
+      <div class="panel-body" style="gap:0;padding-top:8px;padding-bottom:8px">
+        <div class="sec-row"><span class="sec-ic"><svg class="ic"><use href="#i-panel"/></svg></span>Identificação<span class="sec-meta">TAG, projeto e quantidade</span></div>
+        <div class="sec-row"><span class="sec-ic"><svg class="ic"><use href="#i-spec"/></svg></span>Especificações<span class="sec-meta">380/220 V · 800 A</span></div>
+        <div class="sec-row"><span class="sec-ic"><svg class="ic"><use href="#i-list"/></svg></span>Lista de materiais<span class="sec-meta">5 itens</span></div>
+        <div class="sec-row"><span class="sec-ic"><svg class="ic"><use href="#i-file"/></svg></span>Projeto / diagrama<span class="sec-meta">2 arquivos</span></div>
+        <div class="sec-row"><span class="sec-ic"><svg class="ic"><use href="#i-docs"/></svg></span>Documentos técnicos<span class="sec-meta">4 documentos</span></div>
+        <div class="sec-row"><span class="sec-ic"><svg class="ic"><use href="#i-image"/></svg></span>Foto do painel produzido<img class="thumb" src="assets/img/painel-engelec-foto.jpg" alt="Foto do painel"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s10-text">
+    <p class="t-body" data-a style="--d:2400ms">Dentro do projeto <span class="mono" style="color:var(--ink)">ENG-2026-0047</span>, a equipe encontra todos os equipamentos daquela entrega. Ao abrir um equipamento, encontra as informações relacionadas especificamente a ele.</p>
+    <p class="note" data-a style="--d:2700ms">Um projeto com vários quadros ou painéis fica organizado equipamento por equipamento.</p>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 11 — QUEM PODE VER O QUÊ? ============ -->
+<section class="slide s11" data-stage="4" data-case="ENG-2026-0047" aria-label="Cada pessoa acessa o que precisa">
+  <div class="s11-head">
+    <h2 class="t-h1 sm" data-a style="--i:0">Cada pessoa acessa o que precisa para trabalhar.</h2>
+    <p class="t-body" data-a style="--i:1">O mesmo projeto <span class="mono" style="color:var(--ink)">ENG-2026-0047</span>, visto por três pessoas diferentes:</p>
+  </div>
+
+  <div class="roles">
+    <div class="ui role" data-a="rise" style="--d:500ms">
+      <div class="role-head"><span class="role-ic"><svg class="ic"><use href="#i-shield"/></svg></span><div><div class="role-name">Administrador</div><div class="role-sub">Possui visão completa do Portal</div></div></div>
+      <div class="role-proj"><span class="mono">ENG-2026-0047</span> · Cliente Exemplo Indústria Ltda</div>
+      <div class="role-rows">
+        <div><span>Preço negociado</span><b>R$ 107.400,00</b></div>
+        <div><span>Descontos</span><b>Aplicado na Rev.01</b></div>
+        <div><span>Condições de pagamento</span><b>Conforme proposta</b></div>
+        <div><span>Telefone / e-mail do cliente</span><b>(71) 9 0000-0000</b></div>
+        <div><span>Histórico comercial</span><b>Rev.00 · Rev.01</b></div>
+      </div>
+      <div class="role-label">Pode acessar</div>
+      <ul class="role-chips"><li>Solicitações</li><li>Orçamentos</li><li>Projetos</li><li>Equipamentos</li><li>Documentos</li><li>Usuários</li><li>Configurações permitidas</li></ul>
+    </div>
+
+    <div class="ui role" data-a="rise" style="--d:750ms">
+      <div class="role-head"><span class="role-ic"><svg class="ic"><use href="#i-user"/></svg></span><div><div class="role-name">Comercial / Gestão</div><div class="role-sub">Atendimento e negociação</div></div></div>
+      <div class="role-proj"><span class="mono">ENG-2026-0047</span> · Cliente Exemplo Indústria Ltda</div>
+      <div class="role-rows">
+        <div><span>Preço negociado</span><b>R$ 107.400,00</b></div>
+        <div><span>Descontos</span><b>Aplicado na Rev.01</b></div>
+        <div><span>Condições de pagamento</span><b>Conforme proposta</b></div>
+        <div><span>Telefone / e-mail do cliente</span><b>(71) 9 0000-0000</b></div>
+        <div><span>Histórico comercial</span><b>Rev.00 · Rev.01</b></div>
+      </div>
+      <div class="role-label">Trabalha principalmente com</div>
+      <ul class="role-chips"><li>Solicitações</li><li>Clientes e contatos</li><li>Orçamentos</li><li>Valores</li><li>Condições comerciais</li><li>Projetos</li></ul>
+    </div>
+
+    <div class="ui role role-tec" data-a="rise" style="--d:1000ms">
+      <div class="role-head"><span class="role-ic"><svg class="ic"><use href="#i-tool"/></svg></span><div><div class="role-name">Técnico</div><div class="role-sub">Projeto, produção e documentação</div></div></div>
+      <div class="role-proj"><span class="mono">ENG-2026-0047</span> · Cliente Exemplo Indústria Ltda</div>
+      <div class="role-rows hl" style="--hd:1900ms;--hi:-4px">
+        <span class="call down" style="right:12px">Não é exibido para o técnico</span>
+        <div><span>Preço negociado</span><b class="lock-val"><svg class="ic"><use href="#i-lock"/></svg>Não exibido</b></div>
+        <div><span>Descontos</span><b class="lock-val"><svg class="ic"><use href="#i-lock"/></svg>Não exibido</b></div>
+        <div><span>Condições de pagamento</span><b class="lock-val"><svg class="ic"><use href="#i-lock"/></svg>Não exibido</b></div>
+        <div><span>Telefone / e-mail do cliente</span><b class="lock-val"><svg class="ic"><use href="#i-lock"/></svg>Não exibido</b></div>
+        <div><span>Histórico comercial</span><b class="lock-val"><svg class="ic"><use href="#i-lock"/></svg>Não exibido</b></div>
+      </div>
+      <div class="role-label">Trabalha com</div>
+      <ul class="role-chips"><li>Projetos</li><li>Equipamentos</li><li>Especificações</li><li>Listas de materiais</li><li>Diagramas</li><li>Documentos técnicos</li><li>Foto do painel</li></ul>
+    </div>
+  </div>
+
+  <p class="s11-msg" data-a style="--d:2500ms">É o mesmo projeto, mas cada pessoa visualiza somente as informações necessárias para sua função.</p>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 12 — DOCUMENTAÇÃO E FOTO DO PAINEL ============ -->
+<section class="slide s12" data-stage="6" data-case="ENG-2026-0047 · QGBT-01" aria-label="Documentação e foto do painel">
+  <div class="copy-l s12-copy">
+    <h2 class="t-h1 sm" data-a style="--i:0">A documentação fica junto do equipamento dentro do Portal.</h2>
+    <p class="t-body" data-a style="--i:1">Conforme o projeto avança, os documentos técnicos são adicionados ao equipamento correspondente. O técnico também pode adicionar a foto final do painel produzido.</p>
+    <p class="s12-q" data-a style="--i:2">Para cada documento, a Engelec decide:</p>
+    <div class="vis" data-a style="--i:3">
+      <div class="vis-opt"><span class="seg"><span class="on"><svg class="ic"><use href="#i-lock"/></svg>Somente interno</span></span><p>Permanece disponível apenas dentro do Portal, para a equipe autorizada.</p></div>
+      <div class="vis-opt is-qr"><span class="seg"><span class="on qr"><svg class="ic"><use href="#i-qr"/></svg>Disponível no QR</span></span><p>Poderá ser consultado pelo QR daquele equipamento.</p></div>
+    </div>
+  </div>
+
+  <div class="s12-win" data-a="left" style="--i:1">
+    <div class="ui win" data-win>
+      <div class="app">
+        <div data-side="equipamentos" data-av="TE" data-role="Técnico"></div>
+        <div class="app-main">
+          <div data-top="Projetos|ENG-2026-0047|QGBT-01"></div>
+          <div class="app-body">
+            <div class="page-head">
+              <div>
+                <div class="page-title"><span class="mono">QGBT-01</span><span class="badge b-producao">Em produção</span></div>
+                <div class="page-sub">Quadro geral de baixa tensão · Projeto <span class="mono">ENG-2026-0047</span></div>
+              </div>
+              <span class="btn"><svg class="ic"><use href="#i-plus"/></svg>Adicionar documento</span>
+            </div>
+            <div class="s12-grid">
+              <div class="card card-pad">
+                <div class="card-title" style="margin-bottom:12px">Foto do painel</div>
+                <img class="s12-photo" src="assets/img/painel-engelec-foto.jpg" alt="Foto do painel produzido">
+                <div class="file-meta" style="margin-top:10px">Adicionada pelo técnico</div>
+              </div>
+              <div class="card card-pad">
+                <div class="card-title" style="margin-bottom:4px">Documentos</div>
+                <div class="doc-row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Documento 01</div><div class="file-meta">PDF</div></div>
+                  <span class="seg hl" style="--hd:1500ms;--hr:11px"><span>Somente interno</span><span class="on qr"><svg class="ic"><use href="#i-qr"/></svg>Disponível no QR</span></span></div>
+                <div class="doc-row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Documento 02</div><div class="file-meta">PDF</div></div>
+                  <span class="seg hl" style="--hd:1900ms;--hr:11px"><span class="on"><svg class="ic"><use href="#i-lock"/></svg>Somente interno</span><span>Disponível no QR</span></span></div>
+                <div class="doc-row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Documento 03</div><div class="file-meta">DWG</div></div>
+                  <span class="seg hl" style="--hd:2300ms;--hr:11px"><span>Somente interno</span><span class="on qr"><svg class="ic"><use href="#i-qr"/></svg>Disponível no QR</span></span></div>
+                <div class="doc-row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Documento 04</div><div class="file-meta">PDF</div></div>
+                  <span class="seg hl" style="--hd:2700ms;--hr:11px"><span class="on"><svg class="ic"><use href="#i-lock"/></svg>Somente interno</span><span>Disponível no QR</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="sim-tag sim-br">Simulação conceitual</span>
+</section>
+
+<!-- ============ 13 — O QR DENTRO DO EQUIPAMENTO ============ -->
+<section class="slide s13" data-stage="7" data-case="ENG-2026-0047 · QGBT-01" data-plate aria-label="O documento certo, no equipamento certo">
+  <figure class="s13-img" data-a="fade" style="--i:0;--dur:1.2s">
+    <img src="assets/img/painel-qr-conceitual.jpg" alt="Simulação conceitual: painel com QR Code na parte interna da porta">
+    <span class="s13-mark" aria-hidden="true"><i></i></span>
+    <figcaption class="sim-tag">Simulação conceitual</figcaption>
+  </figure>
+
+  <div class="s13-copy">
+    <h2 class="t-h1 sm" data-a style="--i:1">O documento certo, no equipamento certo.</h2>
+    <p class="t-body" data-a style="--i:2">Quando a documentação estiver preparada, o Portal pode gerar um QR Code exclusivo para aquele equipamento.</p>
+    <p class="t-body" data-a style="--i:3">A etiqueta é instalada na <strong style="color:var(--ink)">parte interna da porta</strong> do painel ou quadro: o QR não fica exposto externamente. Quem tiver acesso ao interior do equipamento pode escaneá-lo.</p>
+    <ol class="vsteps">
+      <li data-a style="--i:4"><span class="mono">01</span>Abrir o painel</li>
+      <li data-a style="--i:5"><span class="mono">02</span>Escanear o QR</li>
+      <li data-a style="--i:6"><span class="mono">03</span>Identificar o equipamento</li>
+      <li data-a style="--i:7"><span class="mono">04</span>Consultar a documentação liberada</li>
+    </ol>
+    <p class="note" data-a style="--i:8">Se um documento disponibilizado for atualizado, a Engelec substitui o arquivo no Portal sem precisar trocar o QR instalado no painel.</p>
+  </div>
+</section>
+
+<!-- ============ 14 — O QUE APARECE NO CELULAR? ============ -->
+<section class="slide s14" data-stage="7" data-case="ENG-2026-0047 · QGBT-01" aria-label="O que aparece no celular?">
+  <div class="s14-bg" aria-hidden="true"></div>
+
+  <div class="s14-phone" data-a="rise" style="--i:1">
+    <div class="ui phone">
+      <span class="phone-notch"></span>
+      <div class="phone-screen">
+        <div class="phone-status"><span>9:41</span><span class="bars"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:13px"></i></span></div>
+        <div class="pub-head">
+          <img src="assets/marca/logo-engelec.png" alt="Engelec">
+          <span class="pub-kicker">Documentação Técnica</span>
+        </div>
+        <div class="pub-eq">
+          <div class="row" style="gap:14px;align-items:center">
+            <img class="pub-photo" src="assets/img/painel-engelec-foto.jpg" alt="Foto do equipamento">
+            <div>
+              <div class="pub-tag mono">QGBT-01</div>
+              <div class="pub-proj">Projeto <span class="mono">ENG-2026-0047</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="pub-label">Documentos disponibilizados pela Engelec</div>
+        <div class="pub-docs">
+          <div class="pub-doc">
+            <div class="row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Diagrama elétrico</div><div class="file-meta">PDF</div></div></div>
+            <div class="pub-btns"><span class="btn btn-sm btn-primary"><svg class="ic"><use href="#i-eye"/></svg>Visualizar</span><span class="btn btn-sm"><svg class="ic"><use href="#i-down"/></svg>Baixar</span></div>
+          </div>
+          <div class="pub-doc">
+            <div class="row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Projeto elétrico</div><div class="file-meta">PDF</div></div></div>
+            <div class="pub-btns"><span class="btn btn-sm btn-primary"><svg class="ic"><use href="#i-eye"/></svg>Visualizar</span><span class="btn btn-sm"><svg class="ic"><use href="#i-down"/></svg>Baixar</span></div>
+          </div>
+          <div class="pub-doc">
+            <div class="row"><span class="file-ic"><svg class="ic"><use href="#i-file"/></svg></span><div><div class="file-name">Manual técnico</div><div class="file-meta">PDF</div></div></div>
+            <div class="pub-btns"><span class="btn btn-sm btn-primary"><svg class="ic"><use href="#i-eye"/></svg>Visualizar</span><span class="btn btn-sm"><svg class="ic"><use href="#i-down"/></svg>Baixar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s14-copy">
+    <h2 class="t-h1" data-a style="--i:0">O que aparece no celular?</h2>
+    <p class="t-body" data-a style="--i:2">Ao escanear o QR, o usuário <strong style="color:var(--ink)">não entra</strong> no Portal administrativo da Engelec. Ele acessa uma página simples, referente somente àquele equipamento.</p>
+    <p class="s14-hl" data-a style="--i:3"><svg class="ic"><use href="#i-lock"/></svg><span>O usuário acessa somente a documentação liberada para aquele equipamento.<small>Não tem acesso aos outros projetos, equipamentos ou documentos internos da empresa.</small></span></p>
+    <div class="cmp" data-a style="--d:1900ms">
+      <div class="cmp-row"><span class="cmp-in"><svg class="ic"><use href="#i-qr"/></svg>QR do <span class="mono">QGBT-01</span></span><span class="cmp-arrow"></span><span class="cmp-out ok"><svg class="ic"><use href="#i-check"/></svg>Documentação liberada do <span class="mono">QGBT-01</span></span></div>
+      <div class="cmp-row"><span class="cmp-in">Endereço geral <span class="mono">/documentos/</span></span><span class="cmp-arrow"></span><span class="cmp-out no"><svg class="ic"><use href="#i-x"/></svg>Nenhuma lista de documentos</span></div>
+      <p class="cmp-cap">O endereço geral não funciona como uma biblioteca pública: sem o endereço específico daquele QR, não aparece uma lista com os documentos dos demais equipamentos.</p>
+    </div>
+  </div>
+  <p class="s14-note" data-a="fade" style="--d:2300ms"><span class="sim-tag">Simulação conceitual</span>Os nomes dos documentos são apenas exemplos visuais. A Engelec definirá quais documentos serão disponibilizados em cada caso.</p>
+</section>
+
+<!-- ============ 15 — O QUE O PORTAL FACILITA ============ -->
+<section class="slide s15" aria-label="O que o Portal facilita para a Engelec">
+  <div class="content">
+    <div class="s15-left">
+      <h2 class="t-h1 sm" data-a style="--i:0">Na prática, o que o Portal facilita para a Engelec?</h2>
+      <div class="s15-close" data-a style="--d:2000ms">
+        <p>O objetivo do Portal é fazer a informação seguir o mesmo caminho do projeto:</p>
+        <strong>Do primeiro contato com o cliente até o painel entregue.</strong>
+      </div>
+    </div>
+    <div class="bens">
+      <article data-a style="--i:1"><div class="ben-top"><span class="n">01</span><span class="ben-tag">Solicitação → Orçamento → Projeto</span></div><h3>Menos trabalho repetido</h3><p>Uma informação que já foi cadastrada pode seguir para a próxima etapa sem precisar começar tudo novamente.</p></article>
+      <article data-a style="--i:2"><div class="ben-top"><span class="n">02</span><span class="ben-tag">Um único ambiente</span></div><h3>Mais facilidade para encontrar informações</h3><p>Solicitações, orçamentos, projetos, equipamentos e documentos ficam organizados dentro do mesmo ambiente.</p></article>
+      <article data-a style="--i:3"><div class="ben-top"><span class="n">03</span><span class="ben-tag">Acesso por perfil</span></div><h3>Comercial e técnico trabalhando com a mesma informação</h3><p>Cada equipe acessa a parte que precisa, sem misturar informações comerciais com informações técnicas.</p></article>
+      <article data-a style="--i:4"><div class="ben-top"><span class="n">04</span><span class="ben-tag">Revisões e histórico</span></div><h3>Mais segurança nas alterações</h3><p>Quando uma proposta ou documento é atualizado, as versões anteriores podem continuar guardadas no histórico.</p></article>
+      <article data-a style="--i:5"><div class="ben-top"><span class="n">05</span><span class="ben-tag">QR Code no painel</span></div><h3>Documentação mais fácil de consultar depois da entrega</h3><p>O QR dentro do painel permite acessar pelo celular os documentos que a Engelec decidiu disponibilizar para aquele equipamento.</p></article>
+      <article data-a style="--i:6"><div class="ben-top"><span class="n">06</span><span class="ben-tag">Entrega</span></div><h3>Uma entrega mais profissional para o cliente</h3><p>Além do painel produzido, a Engelec oferece uma forma organizada e moderna de consultar a documentação disponibilizada.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 16 — INVESTIMENTO ============ -->
+<section class="slide tone-dark s16" data-foot="" aria-label="Investimento e próximos passos">
+  <div class="content">
+    <div class="s16-left">
+      <h2 class="s16-title" data-a style="--i:0">Portal Engelec</h2>
+      <p class="t-lead" data-a style="--i:1">Sistema web desenvolvido sob medida para o fluxo comercial e técnico da Engelec.</p>
+
+      <div class="s16-inc" data-a style="--i:3">
+        <div class="t-label">A V1 inclui</div>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg>Desenvolvimento da V1</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Configuração inicial</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Implantação</li>
+        </ul>
+      </div>
+
+      <div class="s16-infra" data-a style="--i:4">
+        <div class="t-label">Infraestrutura</div>
+        <p>A infraestrutura necessária para hospedagem, armazenamento e operação do Portal será contratada separadamente, conforme a necessidade do projeto, com os custos apresentados previamente para aprovação da Engelec.</p>
+        <p>É ela que mantém o Portal online e guarda os dados, documentos, PDFs, fotos e demais arquivos utilizados na operação.</p>
+      </div>
+    </div>
+
+    <div class="price" data-a="left" style="--i:2">
+      <div class="price-ref">
+        <span class="t-label">Valor de referência</span>
+        <span class="price-old"><span class="strike">R$ 5.500</span></span>
+      </div>
+      <div class="price-main">
+        <span class="t-label accent">Condição especial Engelec</span>
+        <span class="price-new">R$ 3.500</span>
+        <span class="price-what">Desenvolvimento e implantação da V1 apresentada</span>
+        <p class="price-scope">Este investimento contempla as funcionalidades apresentadas nesta proposta. Novos módulos, funcionalidades, integrações ou alterações relevantes identificadas durante a validação poderão ser avaliados separadamente antes do desenvolvimento.</p>
+      </div>
+      <div class="price-support"><svg class="ic"><use href="#i-check"/></svg>90 dias de suporte incluídos após a entrega</div>
+      <div class="price-sub">
+        <span class="t-label">Após 90 dias</span>
+        <div class="price-sub-row"><span>Plano de Sustentação Portal Engelec</span><b>R$ 197<small>/mês</small></b></div>
+        <p>Serviço prestado pela ROC7 para sustentação do sistema: manutenção técnica, correções de funcionamento, atualizações necessárias e suporte relacionado ao funcionamento do Portal.</p>
+        <p class="price-not">Novos módulos, novas funcionalidades, integrações e alterações relevantes de escopo são avaliados separadamente.</p>
+      </div>
+    </div>
+
+    <div class="s16-next" data-a style="--i:5">
+      <span class="t-label">Próximos passos</span>
+      <ol>
+        <li>Aprovação</li><li>Levantamento final</li><li>Desenvolvimento</li><li>Validação</li><li>Implantação</li>
+      </ol>
+    </div>
+
+    <div class="s16-sign" data-a="fade" style="--i:7">
+      <img src="assets/marca/logo-roc7.png" alt="ROC7 Soluções Digitais">
+    </div>
+  </div>
+</section>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+</main>
+</div>
+
+<nav class="ctrl" id="ctrl" aria-label="Navegação da apresentação">
+  <button type="button" data-go="prev" aria-label="Slide anterior"><svg class="ic"><use href="#i-chev-l"/></svg></button>
+  <span class="ctrl-num" id="ctrl-num" aria-live="polite">01 / 16</span>
+  <button type="button" data-go="next" aria-label="Próximo slide"><svg class="ic"><use href="#i-chev-r"/></svg></button>
+  <span class="sep"></span>
+  <button type="button" data-go="fs" aria-label="Tela cheia (F)"><svg class="ic"><use href="#i-expand"/></svg></button>
+</nav>
+<div class="rotate-hint">Gire o dispositivo para visualizar melhor</div>
+
+<script src="js/deck.js"></script>
+</body>
+</html>

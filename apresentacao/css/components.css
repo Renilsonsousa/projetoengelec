@@ -1,0 +1,95 @@
+/* Componentes de apresentação reutilizáveis */
+
+/* Título menor para slides de demonstração */
+.t-h1.sm { font-size: 56px; }
+
+/* Lista com marcador de check */
+.ticks { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.ticks li { display: flex; align-items: center; gap: 14px; font-size: 21px; font-weight: 600; color: var(--ink); }
+.ticks svg.ic { width: 28px; height: 28px; padding: 5px; border-radius: 8px; background: var(--g100); color: var(--g700); stroke-width: 2.4; }
+
+/* Linhas de conexão desenhadas (SVG com pathLength="1") */
+.ln { fill: none; stroke: var(--g400); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; }
+@keyframes a-draw { from { stroke-dashoffset: 1; } }
+html.motion .slide.is-active .ln { animation: a-draw .6s var(--ease) backwards; animation-delay: var(--ld, 400ms); }
+
+/* Sequência vertical numerada */
+.vsteps { list-style: none; position: relative; }
+.vsteps::before { content: ""; position: absolute; left: 7px; top: 26px; bottom: 26px; width: 2px; background: var(--g200); }
+.vsteps li { position: relative; display: flex; align-items: center; gap: 16px; height: 52px; padding-left: 42px; font-size: 19px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+.vsteps li::before { content: ""; position: absolute; left: 0; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: var(--white); border: 3px solid var(--g600); }
+.vsteps li:last-child::before { background: var(--g600); }
+.vsteps .mono { font-size: 15px; color: var(--g600); letter-spacing: 0; }
+
+/* Corrente horizontal de etapas */
+.chain { list-style: none; display: flex; align-items: center; flex-wrap: wrap; row-gap: 12px; }
+.chain li { height: 46px; padding: 0 18px; border-radius: 10px; border: 1px solid var(--line); background: var(--white); display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+.chain li + li { margin-left: 46px; position: relative; }
+.chain li + li::before { content: ""; position: absolute; left: -34px; top: 50%; width: 22px; height: 2px; background: var(--g400); }
+.chain li + li::after { content: ""; position: absolute; left: -18px; top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-top: 2px solid var(--g400); border-right: 2px solid var(--g400); transform: rotate(45deg); }
+.chain li.is-key { background: var(--g600); border-color: var(--g600); color: var(--white); }
+.chain li b { font-family: var(--f-display); width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; background: var(--g100); color: var(--g700); letter-spacing: 0; }
+.chain li.is-key b { background: rgba(255, 255, 255, .2); color: var(--white); }
+
+/* Caixa de destaque */
+.note { padding: 20px 24px; border-radius: 14px; background: var(--g50); border: 1px solid var(--g200); font-size: 21px; line-height: 1.45; font-weight: 500; color: var(--g900); text-wrap: pretty; }
+
+/* Legenda numerada (corresponde aos marcadores na tela) */
+.legend { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.legend li { display: flex; align-items: center; gap: 14px; font-size: 21px; font-weight: 600; color: var(--ink); }
+.legend b, .pin { font-family: var(--f-display); font-weight: 600; width: 30px; height: 30px; border-radius: 50%; background: var(--g600); color: var(--white); display: grid; place-items: center; font-size: 15px; flex: none; }
+
+/* ---------- Destaques sobre os mockups ---------- */
+.hl { position: relative; }
+.hl::after {
+  content: ""; position: absolute; inset: var(--hi, -6px); border-radius: var(--hr, 12px);
+  border: 2px solid var(--g600); box-shadow: 0 0 0 6px rgba(10, 126, 58, .14);
+  pointer-events: none; z-index: 4;
+}
+.pin { position: absolute; top: -15px; left: -15px; z-index: 5; box-shadow: 0 0 0 3px var(--white); }
+.call {
+  position: absolute; z-index: 6; white-space: nowrap;
+  background: var(--g950); color: var(--white);
+  font: 600 13px/1 var(--f-text); letter-spacing: .1em; text-transform: uppercase;
+  padding: 9px 12px; border-radius: 8px; box-shadow: 0 10px 24px -10px rgba(5, 42, 21, .5);
+}
+.call.up { bottom: calc(100% + 12px); right: 0; }
+.call.up::after { content: ""; position: absolute; right: 22px; top: 100%; border: 6px solid transparent; border-top-color: var(--g950); }
+.call.down { top: calc(100% + 12px); right: 0; }
+.call.down::after { content: ""; position: absolute; right: 22px; bottom: 100%; border: 6px solid transparent; border-bottom-color: var(--g950); }
+.call.left { right: calc(100% + 14px); top: 50%; transform: translateY(-50%); }
+.call.left::after { content: ""; position: absolute; left: 100%; top: 50%; margin-top: -6px; border: 6px solid transparent; border-left-color: var(--g950); }
+
+/* Linha da tabela em destaque */
+.tbl tr.hl-row td { background: var(--g50); box-shadow: inset 0 2px 0 var(--g600), inset 0 -2px 0 var(--g600); position: relative; }
+.tbl tr.hl-row td:first-child { box-shadow: inset 0 2px 0 var(--g600), inset 0 -2px 0 var(--g600), inset 2px 0 0 var(--g600); }
+.tbl tr.hl-row td:last-child { box-shadow: inset 0 2px 0 var(--g600), inset 0 -2px 0 var(--g600), inset -2px 0 0 var(--g600); }
+
+/* Cursor de clique */
+.cursor { position: absolute; right: -14px; bottom: -26px; width: 34px; height: 34px; z-index: 7; pointer-events: none; }
+.cursor svg { width: 34px; height: 34px; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .25)); }
+.cursor::before { content: ""; position: absolute; left: -8px; top: -8px; width: 22px; height: 22px; border-radius: 50%; background: rgba(10, 126, 58, .35); opacity: 0; }
+@keyframes a-cursor { from { opacity: 0; transform: translate(46px, 36px); } }
+@keyframes a-click { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(1.8); } }
+
+/* Aviso de confirmação */
+.toast { display: inline-flex; align-items: center; gap: 14px; padding: 16px 22px 16px 16px; border-radius: 14px; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow-float); font-size: 17px; color: var(--ink); white-space: nowrap; }
+.toast .ok { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--g600); color: var(--white); flex: none; }
+.toast .ok svg.ic { width: 18px; height: 18px; stroke-width: 2.6; }
+.toast b { font-weight: 600; }
+.toast small { display: block; font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+
+/* Seta de ligação entre tela e detalhe */
+.link-arrow { position: absolute; height: 2px; background: var(--g400); z-index: 2; }
+.link-arrow::after { content: ""; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 2px solid var(--g400); border-right: 2px solid var(--g400); transform: rotate(45deg); }
+html.motion .slide.is-active .link-arrow { animation: a-grow .5s var(--ease) backwards; animation-delay: var(--d, 1600ms); transform-origin: left center; }
+
+/* Destaques aparecem depois da tela (--hd) e o cursor depois do destaque (--cd) */
+html.motion .slide.is-active .hl::after,
+html.motion .slide.is-active .hl > .pin,
+html.motion .slide.is-active .hl > .call,
+html.motion .slide.is-active .hl-row .call { animation: a-pop .5s var(--ease) backwards; animation-delay: var(--hd, 1400ms); }
+html.motion .slide.is-active .tbl tr.hl-row td { animation: a-rowhl .5s ease backwards; animation-delay: var(--hd, 1400ms); }
+@keyframes a-rowhl { from { background: transparent; box-shadow: none; } }
+html.motion .slide.is-active .cursor { animation: a-cursor .7s var(--ease) backwards; animation-delay: var(--cd, 2200ms); }
+html.motion .slide.is-active .cursor::before { animation: a-click .7s ease-out 1 forwards; animation-delay: calc(var(--cd, 2200ms) + 700ms); }

@@ -1,0 +1,50 @@
+/* Fontes locais — nenhuma dependência de internet */
+@font-face { font-family: "Space Grotesk"; src: url("../assets/fonts/SpaceGrotesk-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Space Grotesk"; src: url("../assets/fonts/SpaceGrotesk-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Space Grotesk"; src: url("../assets/fonts/SpaceGrotesk-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("../assets/fonts/IBMPlexSans-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("../assets/fonts/IBMPlexSans-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("../assets/fonts/IBMPlexSans-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("../assets/fonts/IBMPlexSans-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("../assets/fonts/IBMPlexMono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("../assets/fonts/IBMPlexMono-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+
+:root {
+  /* Verde Engelec — #0A7E3A é a cor institucional */
+  --g950: #052A15;
+  --g900: #073A1E;
+  --g800: #08542A;
+  --g700: #086A31;
+  --g600: #0A7E3A;
+  --g400: #4FA472;
+  --g300: #8CC7A2;
+  --g200: #CDE8D6;
+  --g100: #E3F2E8;
+  --g50:  #F2F9F4;
+
+  /* Neutros */
+  --ink:    #16201B;
+  --ink-2:  #5A6560;
+  --ink-3:  #8A938F;
+  --line:   #DDE3DF;
+  --line-2: #ECEFED;
+  --surface:#F6F7F6;
+  --white:  #FFFFFF;
+
+  /* Status — uso restrito aos mockups */
+  --amber:    #9A6413;
+  --amber-bg: #FBF0DC;
+
+  --f-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-text: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+  /* Palco 16:9 */
+  --stage-w: 1920px;
+  --stage-h: 1080px;
+  --mx: 112px;
+
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --shadow-win: 0 2px 4px rgba(5, 42, 21, .04), 0 24px 48px -16px rgba(5, 42, 21, .22), 0 48px 96px -40px rgba(5, 42, 21, .25);
+  --shadow-float: 0 2px 6px rgba(5, 42, 21, .06), 0 28px 56px -18px rgba(5, 42, 21, .32);
+}
